@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bullseye - Data Deletion Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #981C1C;
+            border-bottom: 2px solid #981C1C;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="email"], input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #981C1C;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #7a1616;
+        }
+        .note {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Deletion Request</h1>
+    
+    <div class="note">
+        <p><strong>Important Note:</strong> Before proceeding with your data deletion request, please be aware that:</p>
+        <ul>
+            <li>This action is permanent and cannot be undone</li>
+            <li>All your account data, including investment history and preferences, will be permanently deleted</li>
+            <li>Any active investments or pending transactions will need to be resolved before deletion</li>
+            <li>The process may take up to 30 days to complete</li>
+        </ul>
+    </div>
+
+    <form id="deletionForm" onsubmit="return handleSubmit(event)">
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="reason">Reason for Deletion (Optional):</label>
+            <input type="text" id="reason" name="reason">
+        </div>
+
+        <button type="submit">Submit Deletion Request</button>
+    </form>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const reason = document.getElementById('reason').value;
+            
+            // Here you would typically send this data to your backend
+            // For now, we'll just show a confirmation message
+            alert('Your deletion request has been received. We will process your request within 30 days and send a confirmation email to ' + email);
+            
+            // Clear the form
+            event.target.reset();
+            return false;
+        }
+    </script>
+</body>
+</html> 
